@@ -1,6 +1,6 @@
 # this image augments Ubuntu 16.04 with the minimum necessary to run Yocto with support for QEMU and devtool
 FROM ubuntu:20.04
-MAINTAINER hubshuffle <hubshuffled@gmail.com`>
+LABEL MAINTAINER="Robet Hedges <hedges@ieee.org>"
 
 # Upgrade system, add Yocto Proyect basic dependencies and extras
 RUN apt-get update && apt-get -y upgrade && apt-get -y install kmod gawk wget git-core diffstat unzip texinfo \
