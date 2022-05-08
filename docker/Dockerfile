@@ -3,9 +3,10 @@ FROM ubuntu:20.04
 LABEL MAINTAINER="Robet Hedges <hedges@ieee.org>"
 
 # Upgrade system, add Yocto Proyect basic dependencies and extras
-RUN apt-get update && apt-get -y upgrade && apt-get -y install kmod gawk wget git-core diffstat unzip texinfo \
-gcc-multilib build-essential chrpath socat cpio python python3 python3-pip python3-pexpect xz-utils debianutils \
-iputils-ping libsdl1.2-dev xterm curl vim tzdata
+RUN apt-get update && apt-get upgrade -yq && \
+    apt-get install -yq tzdata && \
+    ln -fs /usr/share/zoneinfo/America/Chicago /etc/localtime && \
+    dpkg-reconfigure -f noninteractive tzdata
 
 # for tunctl (qemu)
 RUN apt-get -y install uml-utilities
