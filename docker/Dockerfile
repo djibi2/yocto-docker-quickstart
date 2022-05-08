@@ -8,6 +8,15 @@ RUN apt-get update && apt-get upgrade -yq && \
     ln -fs /usr/share/zoneinfo/America/Chicago /etc/localtime && \
     dpkg-reconfigure -f noninteractive tzdata
 
+RUN  apt-get -yq  install gawk wget git diffstat unzip texinfo \
+      gcc build-essential chrpath socat cpio python3 python3-pip python3-pexpect \
+      xz-utils debianutils iputils-ping python3-git python3-jinja2  \
+      libegl1-mesa libsdl1.2-dev pylint3 xterm python3-subunit mesa-common-dev \
+       zstd liblz4-tool curl
+
+
+
+
 # for tunctl (qemu)
 RUN apt-get -y install uml-utilities
 
