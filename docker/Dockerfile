@@ -1,5 +1,5 @@
 # this image augments Ubuntu 16.04 with the minimum necessary to run Yocto with support for QEMU and devtool
-FROM ubuntu:16.04
+FROM ubuntu:20.04
 MAINTAINER hubshuffle <hubshuffled@gmail.com`>
 
 # Upgrade system, add Yocto Proyect basic dependencies and extras
