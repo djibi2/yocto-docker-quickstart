@@ -20,14 +20,14 @@ RUN  apt-get -yq  install gawk wget git diffstat unzip texinfo \
 # for tunctl (qemu)
 RUN apt-get -y install uml-utilities
 
-# for toaster
-RUN apt-get -y install python-virtualenv daemon
+## for toaster
+#RUN apt-get -y install python-virtualenv daemon
 
 # for package feeds
 RUN apt-get -y install lighttpd
 
-# for bitbake -g
-RUN apt-get -y install python3-gi python-pip python3-aptdaemon.gtk3widgets
+## for bitbake -g
+#RUN apt-get -y install python3-gi python-pip python3-aptdaemon.gtk3widgets
 
 # Set up locales
 RUN apt-get -y install locales apt-utils sudo && dpkg-reconfigure locales && locale-gen en_US.UTF-8 && update-locale LC_ALL=en_US.UTF-8 LANG=en_US.UTF-8
